@@ -1,0 +1,62 @@
+.wapper {
+    background: var(--default-page-background-1);
+    height: 100%;
+
+    .content {
+        width: 380px;
+        max-width: 98%;
+        background: rgba($color: #ffffff, $alpha: 0.3);
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: var(--content-border-radius);
+        padding: 20px 30px 10px;
+
+        > img {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        > form {
+            margin-top: 30px;
+        }
+
+        .space-between {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .register-button {
+            color: var(--default-link-text-color);
+            cursor: pointer;
+            &:hover {
+                text-decoration: underline;   
+                 animation-play-state: paused; 
+                 opacity: 1 !important;
+            }
+        }
+        .twinkle {
+            /*动画：名称时长循环次数*/
+            animation: blink 1.5s infinite;
+            /* 显式声明播放状态（默认值，可省略） */
+            animation-play-state: running; 
+            /* 定义动画关键帧 */
+            @keyframes blink {
+                0%,
+                100% {
+                    opacity: 1;
+                    /* 完全显示 */
+                }
+
+                50% {
+                    opacity: 0;
+                    /* 完全透明 */
+                }
+            }
+        }
+    }
+}

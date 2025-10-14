@@ -1,0 +1,46 @@
+.wapper {
+    display: flex;
+    justify-content: space-between;
+    background: var(--default-page-background-1);
+    $content-margin: 12px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: $content-margin;
+    .content-common {
+        height: 100%;
+        border-radius: var(--content-border-radius);
+        -webkit-border-radius: var(--content-border-radius);
+        -moz-border-radius: var(--content-border-radius);
+        -ms-border-radius: var(--content-border-radius);
+        -o-border-radius: var(--content-border-radius);
+        background: var(--content-background-color);
+        box-shadow: var(--content-shadow);
+}
+  .left {
+        @extend .content-common;
+        width: 200px;
+        margin-right: $content-margin;
+    }
+    .right{
+        flex: 1;
+        $top-height:40px;
+        $middle-height:30%;
+        .top{
+            height: $top-height;
+            line-height: $top-height;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 0 6px;
+            color: var(--default-font-color);
+        }
+        .middle{
+            @extend .content-common;
+            margin: $content-margin 0;
+            height: $middle-height;
+        }
+        .bottom{
+            @extend .content-common;
+            height: calc(100% - #{$top-height} - #{$middle-height} - #{$content-margin} * 2);
+        }
+    }
+}
